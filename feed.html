@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>المنشورات</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+    .post {
+      background: #fff;
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #dbdbdb;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+    .post img, .post video {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .username {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .like {
+      color: red;
+      cursor: pointer;
+    }
+    .comments {
+      margin-top: 10px;
+    }
+    .comments input {
+      width: 100%;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <div class="username">samesto</div>
+    <img src="https://via.placeholder.com/500x300" alt="صورة">
+    <div>
+      <span class="like" onclick="likePost(this)">❤️ إعجاب</span>
+    </div>
+    <div class="comments">
+      <input type="text" placeholder="أضف تعليق..." onkeypress="handleComment(event, this)">
+      <div class="comment-list"></div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="username">user_23</div>
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+    <div>
+      <span class="like" onclick="likePost(this)">❤️ إعجاب</span>
+    </div>
+    <div class="comments">
+      <input type="text" placeholder="أضف تعليق..." onkeypress="handleComment(event, this)">
+      <div class="comment-list"></div>
+    </div>
+  </div>
+
+  <script>
+    function likePost(el) {
+      el.textContent = '💖 تم الإعجاب';
+      el.style.pointerEvents = 'none';
+    }
+
+    function handleComment(e, input) {
+      if (e.key === 'Enter') {
+        const comment = document.createElement('div');
+        comment.textContent = input.value;
+        input.nextElementSibling.appendChild(comment);
+        input.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
