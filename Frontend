@@ -1,0 +1,22 @@
+instagram-clone/
+│
+├── index.html
+├── style.css
+├── main.js
+│
+├── assets/
+│   └── images/         ← صور المستخدمين والمنشورات
+│
+├── components/
+│   ├── header.js       ← رأس الصفحة (logo, بحث, أيقونات)
+│   ├── sidebar.js      ← القائمة الجانبية (الرئيسية، استكشاف، ملفي...)
+│   ├── post.js         ← عرض المنشورات (صورة، لايك، تعليق)
+│   ├── story.js        ← القصص (ستوري)
+│   ├── messageItem.js  ← عنصر من قائمة الرسائل
+│   └── profileCard.js  ← بطاقة الملف الشخصي
+│
+└── pages/
+    ├── home.js         ← الصفحة الرئيسية
+    ├── profile.js      ← صفحة البروفايل
+    ├── messages.js     ← الرسائل
+    └── login.js        ← صفحة الدخول
